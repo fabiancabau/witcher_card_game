@@ -1,0 +1,28 @@
+{
+  "name": "witcher_card_game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "BaseCard.js",
+  "dependencies": {
+    "browserify": "^11.2.0",
+    "babel-core": "^5.8.25",
+    "traceur": "^0.0.91",
+    "express": "^4.13.3",
+    "babelify": "^6.3.0",
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabiancabau/witcher_card_game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fabiancabau/witcher_card_game/issues"
+  },
+  "homepage": "https://github.com/fabiancabau/witcher_card_game#readme"
+}
