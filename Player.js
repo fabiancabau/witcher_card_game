@@ -12,12 +12,16 @@ export default class Player {
 
     onStart() {
         this.deck.shuffle();
-        this.drawCards(3);
 
         console.log('DECK:');
         console.log(this.deck);
-        console.log('HAND:');
-        console.log(this.hand);
+
+        this.drawCards(6);
+
+        console.log('DECK AFTER DRAW:');
+        console.log(this.deck);
+
+
     }
 
     onSet() {
@@ -27,7 +31,7 @@ export default class Player {
     drawCards(qty) {
       for (let x = 0; x < qty; x++) {
         this.hand.push(this.deck.cards[0]);
-        this.deck.cards.splice(x, 1);
+        this.deck.cards.splice(0, 1);
       }
     }
 
