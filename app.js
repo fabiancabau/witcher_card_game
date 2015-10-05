@@ -11,7 +11,11 @@ var port = process.env.PORT || 1111;
 
 
 var SoldierCard = require('./SoldierCard');
+var Board = require('./Board');
+
 let c = new SoldierCard('Soldier', 'Yellow', 20, 'CREATURE_SOLDIER');
+let b = new Board(null, null, [], [], [], [], [], []);
+
 
 console.log(c);
 
