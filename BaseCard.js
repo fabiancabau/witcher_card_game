@@ -7,10 +7,10 @@ export default class BaseCard {
     }
 
     doSomething() {
-        console.log("Card: " + this.name);
+
     }
 
     onSet() {
-      console.log("You should implement this method");
+      
     }
 }

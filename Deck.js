@@ -30,8 +30,6 @@ export default class Deck {
       this.cards[i] = t;
     }
 
-    console.log(this.cards);
-
   }
 
 }
