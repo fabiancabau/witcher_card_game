@@ -3,8 +3,8 @@
 import BaseCreature from './BaseCreature'
 
 class SoldierCard extends BaseCreature {
-  constructor(name, color, points, creature_type) {
-    super(name, color, points, creature_type);
+  constructor() {
+    super('Soldier', 'Yellow', 20, 'CREATURE_SOLDIER');
   }
 
   onSet() {

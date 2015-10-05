@@ -16,11 +16,12 @@ export default class Board {
     }
 
     onStart() {
-        console.log(this.p1, this.p2);
+        console.log(this.p1);
+        console.log(this.p2);
     }
 
     onSet() {
-      
+
     }
 }
 
