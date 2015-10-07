@@ -1,5 +1,3 @@
-'use strict'
-
 export default class BaseCard {
     constructor(name, color) {
         this.name = name;
@@ -11,6 +9,6 @@ export default class BaseCard {
     }
 
     onSet() {
-      
+
     }
 }

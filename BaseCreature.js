@@ -1,5 +1,3 @@
-'use strict'
-
 import BaseCard from './BaseCard'
 
 export default class BaseCreature extends BaseCard {

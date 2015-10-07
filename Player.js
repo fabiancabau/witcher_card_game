@@ -1,9 +1,9 @@
 'use strict'
 
 export default class Player {
-    constructor(name, hp, socket_id, deck) {
+    constructor(name, socket_id, deck) {
+        this.game = null;
         this.name = name;
-        this.hp = hp;
         this.socket_id = socket_id;
         this.deck = deck;
         this.hand = [];
