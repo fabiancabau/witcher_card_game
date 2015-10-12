@@ -18,6 +18,7 @@ export default class BaseCreature extends BaseCard {
       return true;
     }
     else {
+      console.log('Couldnt place card '+this.name+' on row '+row+'; Card not allowed here.');
       return false;
     }
   }

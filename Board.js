@@ -7,12 +7,12 @@ export default class Board {
           p1: {
             TOP: [],
             MID: [],
-            BOT: []
+            BOT: [],
           },
           p2: {
             TOP: [],
             MID: [],
-            BOT: []
+            BOT: [],
           }
         }
 
@@ -24,8 +24,29 @@ export default class Board {
     }
 
 
-    onSet() {
+    getPlayerPoints(player) {
 
+      var points = 0,
+          roles  = ["TOP", "MID", "BOT"];
+
+      roles.forEach(r => {
+        let aux = this.rows[player][r].map(p => p.points)[0];
+        points += aux != undefined ? aux : 0;
+      });
+
+      // for (let card of this.rows[player].TOP) {
+      //   points = points + card.points;
+      // }
+      //
+      // for (let card of this.rows[player].MID) {
+      //   points = points + card.points;
+      // }
+      //
+      // for (let card of this.rows[player].BOT) {
+      //   points = points + card.points;
+      // }
+
+      return points;
     }
 }
 

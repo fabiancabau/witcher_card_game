@@ -10,7 +10,7 @@ class SoldierCard extends BaseCreature {
   onSet() {
     console.log('Called onSet: Method implemented on SoldierCard');
   }
-  
+
 
 }
 
