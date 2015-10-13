@@ -16,20 +16,46 @@
 </head>
 <body>
 
+<div id="p1_row_top" class="row"></div>
+<div id="p1_row_mid" class="row"></div>
+<div id="p1_row_bot" class="row"></div>
+
+<div id="p2_row_bot" class="row"></div>
+<div id="p2_row_mid" class="row"></div>
+<div id="p2_row_top" class="row"></div>
 
 
 <script>
+$(document).ready(function() {
+
+  $('.row').on('click', function() {
+    socket.emit('play-card', {card_pos: selected_card.attr('card-pos'), row: 'BOT', player: 'p1'});
+  });
+});
+
+
   var socket = io.connect('http://localhost:3000');
+
+  var selected_card = null;
+
   socket.on('connected', function (data) {
     console.log(data);
 
     $.each(data.hand, function (i, card) {
+      $('body').html = '';
       $('body').append(
-        '<div class="card">'+card.name+'</div>'
+        '<div class="card" card-pos="'+ i +'">'+card.name+'</div>'
       );
     });
 
+    $('.card').on('click', function() {
+      alert('clickou');
+      selected_card = $(this);
+      socket.emit('play-card', {card_pos: selected_card.attr('card-pos'), row: 'BOT', player: 'p1'});
+    });
+
   });
+
 </script>
 
 </body>

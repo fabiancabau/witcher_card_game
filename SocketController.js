@@ -34,7 +34,12 @@ export default class SocketController {
 
 			      io.sockets.emit('click-ack', data);
 			  });
-        
+
+        socket.on('play-card', function (data) {
+            p.placeCard(g.board, p1.hand[data.card_pos], data.row);
+            console.log(g.board);
+        });
+
 		  });
 	}
 
