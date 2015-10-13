@@ -13,11 +13,7 @@ export default class Player {
 
     onStart() {
         this.deck.shuffle();
-
         this.drawCards(5);
-
-
-
     }
 
     onSet() {
