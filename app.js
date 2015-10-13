@@ -1,20 +1,23 @@
+'use strict'
+
 // BASE SETUP
 // =================================================================
 
-var express = require('express');
-
-var app = express();
-
+var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
-var port = process.env.PORT || 1111;
 
+
+console.log('Listening on port 3000');
+server.listen(3000);
 var Cards = require('./Cards');
 var Player = require('./Player');
 var Deck = require('./Deck');
 var Game = require('./Game');
+var SocketController = require('./SocketController');
 
-let c = 'SoldierCard'
+
+let c = 'SoldierCard';
 
 let p1 = new Player('aaa', 'ajwdjaw2', new Deck([new Cards[c], new Cards[c], new Cards[c], new Cards[c], new Cards[c], new Cards[c]]), 'p1');
 let p2 = new Player('bbb', 'ajwdjawi3', new Deck([new Cards[c], new Cards[c], new Cards[c], new Cards[c], new Cards[c], new Cards[c]]), 'p2');
@@ -26,23 +29,14 @@ p1.placeCard(g.board, p1.hand[1], 'BOT');
 
 
 console.log('p1 points: ' + g.board.getPlayerPoints('p1'));
+console.log('p2 points: ' + g.board.getPlayerPoints('p2'));
 
 
-app.listen(port, function(){
-  console.log('Server listening on port ' + port);
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/index.html');
 });
 
 
-io.on('connection', function (socket) {
-  socket.emit('connected', { msg: 'helloworld!' });
 
-  socket.on('connected-ack', function (data) {
-    console.log(data);
-  });
-
-  socket.on('click',function (data){
-    console.log(data);
-
-    io.sockets.emit('click-ack', data);
-  });
-});
+var socket_controller = new SocketController(io);
+socket_controller.startListener();

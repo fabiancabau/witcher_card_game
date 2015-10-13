@@ -44,7 +44,16 @@ export default class Player {
       else {
         return false;
       }
+
+      this.finishTurn();
     }
+
+
+    finishTurn() {
+      this.game.nextTurn();
+    }
+
+
 }
 
 module.exports = Player;
