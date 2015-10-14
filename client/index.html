@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+  <div id="game-board">
+    <div id="player-top">
+      <div class="king-col">
+        <div class="king">
+        </div>
+      </div>
+      <div class="game-col">
+        <div class="engine-row">
+          <div class="magic"></div>
+          <div class="mobs">
+
+          </div>
+        </div>
+        <div class="range-row">
+          <div class="magic"></div>
+          <div class="mobs">
+            <img src="assets/img/cards/test1.png" class="card" alt="">
+            <img src="assets/img/cards/test2.png" class="card" alt="">
+          </div>
+        </div>
+        <div class="melee-row">
+          <div class="magic"></div>
+          <div class="mobs">
+
+          </div>
+        </div>
+      </div>
+      <div class="aux-col">
+        <div class="graveyard">
+          <img src="assets/img/cards/test3.png" class="card" alt="">
+        </div>
+        <div class="deck">
+          <img src="assets/img/back.jpg" class="card" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var playerHeight = window.innerHeight/2;
+    var cards = document.querySelectorAll(".card");
+
+    document.getElementById("player-top").style.height = playerHeight + "px";
+    Object.keys(cards).forEach(function (v) {
+      cards[v].onclick = function () {
+        cards[v].classList.toggle("zoom");
+        cards[v].classList.toggle("zoom-in");
+      }
+    })
+  </script>
+</body>
+</html>
