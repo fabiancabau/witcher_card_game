@@ -2,7 +2,7 @@
 
 This project aims to create a clone of the Gwent card game from The Witcher 3 using the following technologies:
 
-* Node.js
+* Node.js using ES6 (Node.js > 4.0 required due to ES6 syntax)
 * Javascript using ES6
 * React.js
 * Flux
