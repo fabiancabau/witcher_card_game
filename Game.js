@@ -6,13 +6,11 @@ export default class Game {
   constructor(p1, p2) {
 
     this.board         = new Board();
-    this.p1            = null;
-    this.p2            = null;
+    this.players       = {};
+    this.players_qty   = 0;
     this.status        = 'WAITING';
     this.current_turn  = null;
     this.next_turn     = null;
-
-    this.onStart();
   }
 
   nextTurn(player) {
@@ -23,29 +21,20 @@ export default class Game {
   }
 
   addPlayer(player) {
-    if (this.p1 == null) {
-      this.p1 = player;
-      this.p1.game = this;
-      return true;
-    }
-    else if (this.p2 == null) {
-      this.p2 = player;
-      this.p2.game = this;
+
+    if (this.players_qty < 2) {
+      player.game = this;
+      this.players[player.socket_id] = player;
+      this.board.addRows(player.socket_id);
       return true;
     }
     else {
       console.log('Game is full;');
       return false;
     }
+  
   }
 
-  onStart() {
-
-  }
-
-  onSet() {
-
-  }
 }
 
 module.exports = Game;

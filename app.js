@@ -10,26 +10,23 @@ var io = require('socket.io')(server);
 
 console.log('Listening on port 3000');
 server.listen(3000);
-var Cards = require('./Cards');
-var Player = require('./Player');
-var Deck = require('./Deck');
-var Game = require('./Game');
+var Cards = require('./Cards/Cards');
 var SocketController = require('./SocketController');
 
 
-let c = 'SoldierCard';
+// let c = 'SoldierCard';
 
-let p1 = new Player('aaa', 'ajwdjaw2', new Deck([new Cards[c], new Cards[c], new Cards[c], new Cards[c], new Cards[c], new Cards[c]]), 'p1');
-let p2 = new Player('bbb', 'ajwdjawi3', new Deck([new Cards[c], new Cards[c], new Cards[c], new Cards[c], new Cards[c], new Cards[c]]), 'p2');
+// let p1 = new Player('aaa', 'ajwdjaw2', new Deck([new Cards[c], new Cards[c], new Cards[c], new Cards[c], new Cards[c], new Cards[c]]), 'p1');
+// let p2 = new Player('bbb', 'ajwdjawi3', new Deck([new Cards[c], new Cards[c], new Cards[c], new Cards[c], new Cards[c], new Cards[c]]), 'p2');
 
-let g = new Game();
-p1.placeCard(g.board, p1.hand[0], 'MID');
-p1.placeCard(g.board, p1.hand[0], 'TOP');
-p1.placeCard(g.board, p1.hand[1], 'BOT');
+// let g = new Game();
+// p1.placeCard(g.board, p1.hand[0], 'MID');
+// p1.placeCard(g.board, p1.hand[0], 'TOP');
+// p1.placeCard(g.board, p1.hand[1], 'BOT');
 
 
-console.log('p1 points: ' + g.board.getPlayerPoints('p1'));
-console.log('p2 points: ' + g.board.getPlayerPoints('p2'));
+// console.log('p1 points: ' + g.board.getPlayerPoints('p1'));
+// console.log('p2 points: ' + g.board.getPlayerPoints('p2'));
 
 
 app.get('/', function (req, res) {

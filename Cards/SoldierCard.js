@@ -1,6 +1,6 @@
 'use strict'
 
-import BaseCreature from './BaseCreature'
+import BaseCreature from './Base/BaseCreature'
 
 class SoldierCard extends BaseCreature {
   constructor() {

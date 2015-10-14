@@ -1,10 +1,9 @@
 'use strict'
 
 export default class Player {
-    constructor(name, socket_id, deck, description) {
+    constructor(name, socket_id, deck) {
         this.game = null;
         this.name = name;
-        this.description = description;
         this.socket_id = socket_id;
         this.deck = deck;
         this.hand = [];
@@ -34,7 +33,7 @@ export default class Player {
 
     placeCard(board, card, row) {
       if (card.canPlaceOnRow(row)) {
-        board.rows[this.description][row].push(card);
+        board.rows[this.socket_id][row].push(card);
         return true;
       }
       else {

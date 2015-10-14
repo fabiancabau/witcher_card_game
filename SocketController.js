@@ -1,7 +1,7 @@
 'use strict'
 
 let c = 'SoldierCard';
-var Cards = require('./Cards');
+var Cards = require('./Cards/Cards');
 var Player = require('./Player');
 var Deck = require('./Deck');
 var Game = require('./Game');
@@ -15,10 +15,10 @@ export default class SocketController {
 
     startListener() {
 	    this.io.on('connection', function (socket) {
-
-        var p = new Player('aaa', 'ajwdjaw2', new Deck([new Cards[c], new Cards[c], new Cards[c], new Cards[c], new Cards[c], new Cards[c]]), 'p1');
+	   	console.log(socket.id + ' connected');
+        var p = new Player('aaa', socket.id, new Deck([new Cards[c], new Cards[c], new Cards[c], new Cards[c], new Cards[c], new Cards[c]]));
         if (g.addPlayer(p)) {
-            socket.emit('connected', { hand: p.hand });
+            socket.emit('connected', { hand: p.hand, socket_id: socket.id });
         }
 
 			  socket.on('game-start', function (data) {

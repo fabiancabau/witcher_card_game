@@ -1,19 +1,10 @@
 'use strict'
 
 export default class Board {
-    constructor() {
+    constructor(name) {
 
         this.rows = {
-          p1: {
-            TOP: [],
-            MID: [],
-            BOT: [],
-          },
-          p2: {
-            TOP: [],
-            MID: [],
-            BOT: [],
-          }
+
         }
 
         this.onStart();
@@ -24,29 +15,25 @@ export default class Board {
     }
 
 
-    getPlayerPoints(player) {
+    getPlayerPoints(socket_id) {
 
       var points = 0,
           roles  = ["TOP", "MID", "BOT"];
 
       roles.forEach(r => {
-        let aux = this.rows[player][r].map(p => p.points)[0];
+        let aux = this.rows[socket_id][r].map(p => p.points)[0];
         points += aux != undefined ? aux : 0;
       });
-
-      // for (let card of this.rows[player].TOP) {
-      //   points = points + card.points;
-      // }
-      //
-      // for (let card of this.rows[player].MID) {
-      //   points = points + card.points;
-      // }
-      //
-      // for (let card of this.rows[player].BOT) {
-      //   points = points + card.points;
-      // }
-
+      
       return points;
+    }
+
+    addRows(socket_id) {
+        this.rows[socket_id] = {
+            TOP: [],
+            MID: [],
+            BOT: []
+        }
     }
 }
 
