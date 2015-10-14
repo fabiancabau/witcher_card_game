@@ -36,7 +36,7 @@ export default class SocketController {
 			  });
 
         socket.on('play-card', function (data) {
-            p.placeCard(g.board, p1.hand[data.card_pos], data.row);
+            p.placeCard(g.board, p.hand[data.card_pos], data.row);
             console.log(g.board);
         });
 
