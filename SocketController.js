@@ -15,7 +15,7 @@ export default class SocketController {
 
     startListener() {
 	    this.io.on('connection', function (socket) {
-	   	console.log(socket.id + ' connected');
+
         var p = new Player('aaa', socket.id, new Deck([new Cards[c], new Cards[c], new Cards[c], new Cards[c], new Cards[c], new Cards[c]]));
         if (g.addPlayer(p)) {
             socket.emit('connected', { hand: p.hand, socket_id: socket.id });
@@ -23,16 +23,6 @@ export default class SocketController {
 
 			  socket.on('game-start', function (data) {
 			 	    io.sockets.emit('game-start', {});
-			  });
-
-			  socket.on('draw-card', function (player) {
-
-			  });
-
-			  socket.on('click',function (data){
-			      console.log(data);
-
-			      io.sockets.emit('click-ack', data);
 			  });
 
         socket.on('play-card', function (data) {

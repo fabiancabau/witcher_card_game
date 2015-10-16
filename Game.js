@@ -26,13 +26,14 @@ export default class Game {
       player.game = this;
       this.players[player.socket_id] = player;
       this.board.addRows(player.socket_id);
+      this.players_qty++;
       return true;
     }
     else {
       console.log('Game is full;');
       return false;
     }
-  
+
   }
 
 }

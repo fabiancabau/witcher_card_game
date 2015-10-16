@@ -2,10 +2,11 @@
 
 // BASE SETUP
 // =================================================================
-
-var app = require('express')();
+var express = require('express');
+var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
+var path = require('path');
 
 
 console.log('Listening on port 3000');
@@ -28,9 +29,10 @@ var SocketController = require('./SocketController');
 // console.log('p1 points: ' + g.board.getPlayerPoints('p1'));
 // console.log('p2 points: ' + g.board.getPlayerPoints('p2'));
 
+app.use(express.static(path.join(__dirname, 'client')));
 
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/client/index.html');
 });
 
 
