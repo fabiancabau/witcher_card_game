@@ -1,0 +1,16 @@
+.game-col{
+  background       : @boardPatternImage;
+  background-size  : 50px;
+  width            : calc(~'77.5% - 30px');
+
+  & > div {float:left; height: 100%}
+
+  @import "components/rows.less";
+  @import "components/aux.less";
+}
+
+.ornament{
+  background       : @boardBorderImage;
+  background-size  : 30px;
+  width            : 30px;
+}

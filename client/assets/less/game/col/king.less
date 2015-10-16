@@ -1,0 +1,43 @@
+.king-col{
+  background       : url("../img/board/wood-profile.png");
+  background-size  : 55px;
+  box-shadow       : 0 0 110px rgba(0,0,0,0.9) inset;
+  width            : 22.5%;
+
+  .player {
+    height    : 50%;
+    position  : relative;
+    width     : 100%;
+
+    .king-card{
+      position : absolute;
+      width    : 100%;
+
+      .king{
+        background       : @kingBgImage;
+        background-size  : 120px;
+        height           : 108px;
+        width            : 120px;
+        margin           : @marginCenter;
+      }
+    }
+    .info {
+      height     : 120px;
+      width      : 100%;
+      background : rgba(0,0,0,0.7);
+      position   : absolute;
+
+      @import "components/profile.less";
+    }
+  }
+
+  .player-1 {
+    .king-card {bottom : 12px}
+    .info {top : 20%}
+  }
+
+  .player-2 {
+    .king-card {top    : 25px}
+    .info {bottom      : 20%}
+  }
+}

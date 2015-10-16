@@ -1,0 +1,68 @@
+& > div {
+  float: left;
+  height: 100%;
+}
+
+.profile-img{
+  width : 35%;
+
+  & > div {
+    background       : @avatarBorder;
+    background-size  : 100px;
+    height           : 105px;
+    margin           : 6px auto 0;
+    position         : relative;
+    width            : 100px;
+    z-index          : 2;
+  }
+
+  & > img {
+    border-radius : 50%;
+    left          : 4%;
+    position      : absolute;
+    top           : 7px;
+    width         : 90px;
+    z-index       : 1;
+  }
+}
+
+.game-info{
+  width   : 65%;
+
+  & > div:nth-child(1){
+    height   : 40%;
+
+    span{
+      width     : 100%;
+      color     : @yellowLight;
+      display   : block;
+      font-size : 13px;
+
+      &:first-child{margin-top: 10px;font-size:16px}
+    }
+  }
+
+  & > div:nth-child(2) {
+    height   : 60%;
+
+    & > *{ float: left}
+
+    .total-cards{
+      margin-right : 50px;
+
+      & > span {
+        font-size  : 18px;
+        color      : @yellowLight;
+      }
+    }
+
+    .life-crystal{
+      background  : @crystalFullImage;
+      width       : 48px;
+      height      : 48px;
+
+      &.null{background: @crystalEmptyImage}
+    }
+  }
+
+}

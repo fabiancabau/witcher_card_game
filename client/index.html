@@ -2,58 +2,94 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Gwent</title>
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
   <div id="game-board">
-    <div id="player-top">
-      <div class="king-col">
-        <div class="king">
+    <div class="king-col">
+      <div class="player player-2">
+        <div class="king-card">
+          <div class="king"></div>
+        </div>
+        <div class="info">
+          <div class="profile-img">
+            <div></div>
+            <img src="assets/img/players/001.jpg" alt="" />
+          </div>
+          <div class="game-info">
+            <div>
+              <span>@GuiDiego</span>
+              <span>Dominador das Manjarias do Front</span>
+            </div>
+            <div>
+              <div class="total-cards">
+                <img src="assets/img/board/cards.png" alt="">
+                <span>8</span>
+              </div>
+              <div class="life-crystal"></div>
+              <div class="life-crystal"></div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="game-col">
-        <div class="engine-row">
-          <div class="magic"></div>
-          <div class="mobs">
-
+      <div class="player player-1">
+        <div class="king-card">
+          <div class="king-card">
+            <div class="king"></div>
           </div>
         </div>
-        <div class="range-row">
-          <div class="magic"></div>
-          <div class="mobs">
-            <img src="assets/img/cards/test1.png" class="card" alt="">
-            <img src="assets/img/cards/test2.png" class="card" alt="">
+        <div class="info">
+          <div class="profile-img">
+            <div></div>
+            <img src="assets/img/players/002.jpg" alt="" />
           </div>
-        </div>
-        <div class="melee-row">
-          <div class="magic"></div>
-          <div class="mobs">
-
+          <div class="game-info">
+            <div>
+              <span>@FabianCabau</span>
+              <span>Junin dos NodeJS da Vida</span>
+            </div>
+            <div>
+              <div class="total-cards">
+                <img src="assets/img/board/cards.png" alt="">
+                <span>4</span>
+              </div>
+              <div class="life-crystal null"></div>
+              <div class="life-crystal"></div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="aux-col">
-        <div class="graveyard">
-          <img src="assets/img/cards/test3.png" class="card" alt="">
-        </div>
-        <div class="deck">
-          <img src="assets/img/back.jpg" class="card" alt="">
         </div>
       </div>
     </div>
+    <div class="ornament"></div>
+    <div class="game-col">
+      <div class="board-rows">
+        <div id="player-2">
+          <div class="top-row"></div>
+          <div class="mid-row"></div>
+          <div class="bot-row"></div>
+        </div>
+        <div id="player-1">
+          <div class="bot-row"></div>
+          <div class="mid-row"></div>
+          <div class="top-row"></div>
+          <div class="player-hand"></div>
+        </div>
+      </div>
+      <div class="aux-col"></div>
+    </div>
   </div>
   <script>
-    var playerHeight = window.innerHeight/2;
-    var cards = document.querySelectorAll(".card");
-
-    document.getElementById("player-top").style.height = playerHeight + "px";
-    Object.keys(cards).forEach(function (v) {
-      cards[v].onclick = function () {
-        cards[v].classList.toggle("zoom");
-        cards[v].classList.toggle("zoom-in");
-      }
-    })
+    // var playerHeight = window.innerHeight/2;
+    // var cards = document.querySelectorAll(".card");
+    //
+    // document.getElementById("player-top").style.height = playerHeight + "px";
+    // Object.keys(cards).forEach(function (v) {
+    //   cards[v].onclick = function () {
+    //     cards[v].classList.toggle("zoom");
+    //     cards[v].classList.toggle("zoom-in");
+    //   }
+    // })
   </script>
 </body>
 </html>

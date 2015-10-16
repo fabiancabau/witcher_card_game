@@ -1,0 +1,27 @@
+.board-rows {
+  width:70%;
+
+  & > div {
+    .top-row{background: @topRowBgConfig; background-size: contain}
+    .mid-row{background: @midRowBgConfig; background-size: contain}
+    .bot-row{background: @botRowBgConfig; background-size: contain}
+
+    & > div {
+      box-sizing: border-box;
+      width : 90%;
+      margin: 10px auto 10px;
+      height: 91px;
+      padding: 5px 5px 5px 15px;
+    }
+  }
+
+  #player-2{
+    .top-row{.flip}
+    .mid-row{.flip}
+    .bot-row{.flip}
+  }
+
+  #player-1{
+    .player-hand{background: @handRowImage;background-size: contain}
+  }
+}
