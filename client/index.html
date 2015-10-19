@@ -4,97 +4,12 @@
   <meta charset="UTF-8">
   <title>Gwent</title>
   <link rel="stylesheet" href="assets/css/main.css">
-
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 </head>
 <body>
-  <div id="game-board">
-    <div class="king-col">
-      <div class="player player-2">
-        <div class="king-card">
-          <div class="king"></div>
-        </div>
-        <div class="info">
-          <div class="profile-img">
-            <div></div>
-            <img src="assets/img/players/001.jpg" alt="" />
-          </div>
-          <div class="game-info">
-            <div>
-              <span>@GuiDiego</span>
-              <span>Dominador das Manjarias do Front</span>
-            </div>
-            <div>
-              <div class="total-cards">
-                <img src="assets/img/board/cards.png" alt="">
-                <span>8</span>
-              </div>
-              <div class="life-crystal"></div>
-              <div class="life-crystal"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="player player-1">
-        <div class="king-card">
-          <div class="king-card">
-            <div class="king"></div>
-          </div>
-        </div>
-        <div class="info">
-          <div class="profile-img">
-            <div></div>
-            <img src="assets/img/players/002.jpg" alt="" />
-          </div>
-          <div class="game-info">
-            <div>
-              <span>@FabianCabau</span>
-              <span>Junin dos NodeJS da Vida</span>
-            </div>
-            <div>
-              <div class="total-cards">
-                <img src="assets/img/board/cards.png" alt="">
-                <span>4</span>
-              </div>
-              <div class="life-crystal null"></div>
-              <div class="life-crystal"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="ornament"></div>
-    <div class="game-col">
-      <div class="board-rows">
-        <div id="player-2">
-          <div class="top-row"></div>
-          <div class="mid-row"></div>
-          <div class="bot-row"></div>
-        </div>
-        <div id="player-1">
-          <div class="bot-row"></div>
-          <div class="mid-row"></div>
-          <div class="top-row"></div>
-          <div class="player-hand"></div>
-        </div>
-      </div>
-      <div class="aux-col"></div>
-    </div>
-  </div>
+  <div id="app"></div>
+
+  <script src="assets/js/app.js"></script>
   <script>
-<<<<<<< HEAD
-    // var playerHeight = window.innerHeight/2;
-    // var cards = document.querySelectorAll(".card");
-    //
-    // document.getElementById("player-top").style.height = playerHeight + "px";
-    // Object.keys(cards).forEach(function (v) {
-    //   cards[v].onclick = function () {
-    //     cards[v].classList.toggle("zoom");
-    //     cards[v].classList.toggle("zoom-in");
-    //   }
-    // })
-=======
     var playerHeight = window.innerHeight/2;
     var cards = document.querySelectorAll(".card");
 
@@ -105,37 +20,6 @@
         cards[v].classList.toggle("zoom-in");
       }
     });
-
-
-    $('.row').on('click', function() {
-      socket.emit('play-card', {card_pos: selected_card.attr('card-pos'), row: 'MID', player: 'p1'});
-    });
-
-    var socket = io.connect('http://localhost:3000');
-    var socket_id = null;
-    var selected_card = null;
-
-    socket.on('connected', function (data) {
-      console.log(data);
-
-      socket_id = data.socket_id;
-      $('#player_id').html('Player id: ' + socket_id);
-
-      $('#card_container').html('');
-
-      $.each(data.hand, function (i, card) {
-        $('#card_container').append(
-          '<div class="card" card-pos="'+ i +'">'+card.name+'</div>'
-        );
-      });
-
-      $('.card').on('click', function() {
-        selected_card = $(this);
-        socket.emit('play-card', {card_pos: selected_card.attr('card-pos'), row: 'MID', player: socket_id});
-      });
-
-    });
->>>>>>> cba6a446e220044ddca108b3c2b98f227538e9c1
   </script>
 </body>
 </html>
