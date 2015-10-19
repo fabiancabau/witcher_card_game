@@ -2,6 +2,7 @@ import React from "react";
 import BoardRow from "./BoardRow.js";
 import ObjectUtil from "./../../../utils/ObjectUtil.js";
 
+
 class BoardRows extends React.Component{
   constructor(props) {
     super(props);
@@ -28,7 +29,7 @@ class BoardRows extends React.Component{
             return(
               <div id={`player-gamerows-${num}`}>
                 {Object.keys(g).map(k => {
-                  return(<BoardRow role={k} />);
+                  return(<BoardRow role={k} cards={g[k]}/>);
                 })}
               </div>
             )

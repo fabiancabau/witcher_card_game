@@ -1,39 +1,15 @@
 import React from "react";
 import BoardProfile from "./profileArea/BoardProfile.js";
 import BoardRows from "./gameArea/BoardRows.js";
+import player1 from "./../../mocks/Player1.mock.js";
+import player2 from "./../../mocks/Player2.mock.js";
+
+var mock = {player1 : player1, player2 : player2};
 
 class Board extends React.Component{
   constructor(props) {
     super(props);
-    this.mock = {
-      player1: {
-        name      : "GuiDiego",
-        handCount : 8,
-        game      : {
-          top  : [],
-          mid  : [],
-          bot  : [],
-          hand : [1,2]
-        },
-        status    : "O manjador infinito do Front-End",
-        photo     : "assets/img/players/001.jpg",
-        crystal   : 2,
-        number    : 1
-      },
-      player2: {
-        name      : "FabianCabau",
-        handCount : 5,
-        game      : {
-          top : [],
-          mid : [],
-          bot : []
-        },
-        status    : "Junin do NodeJS",
-        photo     : "assets/img/players/002.jpg",
-        crystal   : 1,
-        number    : 2
-      }
-    };
+    this.mock = mock;
   }
 
   render(){
